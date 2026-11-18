@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portfolio | หน้าหลัก</title>
+
+    <!-- Google Fonts: Chakra Petch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>STUDENT PORTFOLIO</h1>
+        <p>เว็บไซต์รวบรวมข้อมูลและผลงานนักศึกษา</p>
+    </header>
+
+    <!-- เมนูหลัก -->
+    <nav>
+        <a href="index.html" class="active" id="homeNav"
+           onclick="showHome()">หน้าหลัก</a>
+
+        <a href="portfolio-1.html">Profile 1</a>
+        <a href="portfolio-2.html">Profile 2</a>
+        <a href="portfolio-3.html">Profile 3</a>
+
+        <a href="#login" id="loginNav"
+           onclick="showAuthForm('login'); return false;">Login</a>
+
+        <a href="#register" id="registerNav"
+           onclick="showAuthForm('register'); return false;">Register</a>
+    </nav>
+
+    <main class="container">
+
+        <!-- =========================
+             หน้าหลัก
+        ========================== -->
+
+        <div id="homeContent">
+
+            <h2 class="section-title">ข้อมูลนักศึกษา</h2>
+
+            <div class="index-container">
+
+                <div class="student-info">
+
+                    <!-- นักศึกษาคนที่ 1 -->
+                    <p>
+                        <a href="portfolio-1.html">
+                            นายภูริภัทร เอี่ยมฉลวย
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090077
+                        <br>
+                        เลขที่: 14
+                        <br><br>
+                        <a href="portfolio-1.html" class="btn">
+                            เข้าชม Profile 1
+                        </a>
+                    </p>
+
+                    <!-- นักศึกษาคนที่ 2 -->
+                    <p>
+                        <a href="portfolio-2.html">
+                            นายปัณณวัฒน์ พรมทองคำ
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090078
+                        <br>
+                        เลขที่: 15
+                        <br><br>
+                        <a href="portfolio-2.html" class="btn">
+                            เข้าชม Profile 2
+                        </a>
+                    </p>
+
+                    <!-- นักศึกษาคนที่ 3 -->
+                    <p>
+                        <a href="portfolio-3.html">
+                            นายอัครวินท์ เชียรตะกูล
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090070
+                        <br>
+                        เลขที่: 7
+                        <br><br>
+                        <a href="portfolio-3.html" class="btn">
+                            เข้าชม Profile 3
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="images">
+
+                    <a href="https://www.youtube.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img
+                            src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
+                            alt="YouTube">
+                    </a>
+
+                    <a href="https://www.google.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img
+                            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                            alt="Google">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             LOGIN / REGISTER
+        ========================== -->
+
+        <section id="authSection" class="auth-section" hidden>
+
+            <!-- แบบฟอร์ม Login -->
+            <form id="loginForm" class="auth-form" hidden>
+
+                <h2 class="section-title">เข้าสู่ระบบ Login</h2>
+
+                <label for="loginUsername">Username</label>
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="กรอก Username"
+                    autocomplete="username"
+                    required>
+
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="กรอก Password"
+                    autocomplete="current-password"
+                    required>
+
+                <div class="auth-buttons">
+                    <button type="submit" class="btn">
+                        เข้าสู่ระบบ
+                    </button>
+
+                    <button type="reset" class="btn btn-cancel">
+                        ยกเลิก
+                    </button>
+                </div>
+
+                <p class="auth-switch">
+                    ยังไม่มีบัญชี?
+                    <a href="#register"
+                       onclick="showAuthForm('register'); return false;">
+                        สมัครสมาชิก
+                    </a>
+                </p>
+
+            </form>
+
+            <!-- แบบฟอร์ม Register -->
+            <form id="registerForm" class="auth-form" hidden>
+
+                <h2 class="section-title">สมัครสมาชิก Register</h2>
+
+                <label for="registerUsername">Username</label>
+                <input
+                    type="text"
+                    id="registerUsername"
+                    placeholder="ตั้งชื่อผู้ใช้งาน"
+                    minlength="3"
+                    maxlength="30"
+                    autocomplete="username"
+                    required>
+
+                <label for="registerPassword">Password</label>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="ตั้งรหัสผ่านอย่างน้อย 8 ตัวอักษร"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required>
+
+                <label for="registerFullname">ชื่อ-สกุล</label>
+                <input
+                    type="text"
+                    id="registerFullname"
+                    placeholder="กรอกชื่อและนามสกุล"
+                    autocomplete="name"
+                    required>
+
+                <label for="registerEmail">Email</label>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required>
+
+                <label for="registerPhone">เบอร์โทรศัพท์</label>
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="กรอกเบอร์โทรศัพท์ 9-10 หลัก"
+                    pattern="[0-9]{9,10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    required>
+
+                <div class="auth-buttons">
+                    <button type="submit" class="btn">
+                        ยืนยัน
+                    </button>
+
+                    <button type="reset" class="btn btn-cancel">
+                        ยกเลิก
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- หลังเข้าสู่ระบบ -->
+            <div id="memberPanel" class="member-panel" hidden>
+
+                <h2 class="section-title">เข้าสู่ระบบสำเร็จ</h2>
+
+                <p>
+                    ยินดีต้อนรับ
+                    <strong id="memberName"></strong>
+                </p>
+
+                <button type="button" class="btn" onclick="logout()">
+                    ออกจากระบบ
+                </button>
+
+            </div>
+
+            <!-- ข้อความแจ้งเตือน -->
+            <p id="authMessage"
+               class="auth-message"
+               role="status"
+               aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>เว็บไซต์รวบรวมข้อมูลและผลงานนักศึกษา</p>
+        <p>Student Portfolio Website</p>
+    </footer>
+
+    <!-- =========================
+         LOGIN / REGISTER SCRIPT
+    ========================== -->
+
+    <script>
+
+        const STORAGE_KEY = "studentPortfolioUsers";
+
+        // อ่านข้อมูลสมาชิก
+        function getUsers() {
+            try {
+                return JSON.parse(
+                    localStorage.getItem(STORAGE_KEY)
+                ) || [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        // บันทึกข้อมูลสมาชิก
+        function saveUsers(users) {
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(users)
+            );
+        }
+
+        // สร้าง Salt
+        function createSalt() {
+            const bytes = crypto.getRandomValues(
+                new Uint8Array(16)
+            );
+
+            return Array.from(bytes)
+                .map(byte => byte.toString(16).padStart(2, "0"))
+                .join("");
+        }
+
+        // เข้ารหัส Password ด้วย SHA-256
+        async function hashPassword(password, salt) {
+            const data = new TextEncoder().encode(
+                salt + password
+            );
+
+            const hash = await crypto.subtle.digest(
+                "SHA-256",
+                data
+            );
+
+            return Array.from(new Uint8Array(hash))
+                .map(byte => byte.toString(16).padStart(2, "0"))
+                .join("");
+        }
+
+        // แสดงข้อความแจ้งเตือน
+        function showMessage(message, type = "") {
+            const messageBox = document.getElementById(
+                "authMessage"
+            );
+
+            messageBox.textContent = message;
+            messageBox.className = "auth-message " + type;
+        }
+
+        // เปลี่ยนสถานะเมนู
+        function setActiveNav(activeId) {
+            const navItems = [
+                "homeNav",
+                "loginNav",
+                "registerNav"
+            ];
+
+            navItems.forEach(id => {
+                document.getElementById(id).classList.toggle(
+                    "active",
+                    id === activeId
+                );
+            });
+        }
+
+        // กลับหน้าหลัก
+        function showHome() {
+            document.getElementById("homeContent").hidden = false;
+            document.getElementById("authSection").hidden = true;
+
+            setActiveNav("homeNav");
+            showMessage("");
+        }
+
+        // เปิดหน้า Login หรือ Register
+        function showAuthForm(type) {
+
+            document.getElementById("homeContent").hidden = true;
+            document.getElementById("authSection").hidden = false;
+
+            document.getElementById("loginForm").hidden =
+                type !== "login";
+
+            document.getElementById("registerForm").hidden =
+                type !== "register";
+
+            document.getElementById("memberPanel").hidden = true;
+
+            setActiveNav(
+                type === "login" ? "loginNav" : "registerNav"
+            );
+
+            showMessage("");
+        }
+
+        // สมัครสมาชิก
+        document.getElementById("registerForm").addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                const username = document.getElementById(
+                    "registerUsername"
+                ).value.trim();
+
+                const password = document.getElementById(
+                    "registerPassword"
+                ).value;
+
+                const fullname = document.getElementById(
+                    "registerFullname"
+                ).value.trim();
+
+                const email = document.getElementById(
+                    "registerEmail"
+                ).value.trim();
+
+                const phone = document.getElementById(
+                    "registerPhone"
+                ).value.trim();
+
+                if (password.length < 8) {
+                    showMessage(
+                        "Password ต้องมีอย่างน้อย 8 ตัวอักษร",
+                        "error"
+                    );
+                    return;
+                }
+
+                const users = getUsers();
+
+                const existingUser = users.some(user =>
+                    user.username.toLowerCase() === username.toLowerCase()
+                );
+
+                if (existingUser) {
+                    showMessage(
+                        "Username นี้ถูกใช้งานแล้ว",
+                        "error"
+                    );
+                    return;
+                }
+
+                const salt = createSalt();
+
+                const passwordHash = await hashPassword(
+                    password,
+                    salt
+                );
+
+                users.push({
+                    username: username,
+                    passwordHash: passwordHash,
+                    salt: salt,
+                    fullname: fullname,
+                    email: email,
+                    phone: phone
+                });
+
+                try {
+                    saveUsers(users);
+
+                    this.reset();
+
+                    showAuthForm("login");
+
+                    document.getElementById(
+                        "loginUsername"
+                    ).value = username;
+
+                    showMessage(
+                        "สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ",
+                        "success"
+                    );
+
+                } catch (error) {
+                    showMessage(
+                        "ไม่สามารถบันทึกข้อมูลได้",
+                        "error"
+                    );
+                }
+
+            }
+        );
+
+        // เข้าสู่ระบบ
+        document.getElementById("loginForm").addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                const username = document.getElementById(
+                    "loginUsername"
+                ).value.trim();
+
+                const password = document.getElementById(
+                    "loginPassword"
+                ).value;
+
+                const users = getUsers();
+
+                const user = users.find(item =>
+                    item.username.toLowerCase() === username.toLowerCase()
+                );
+
+                if (!user) {
+                    showMessage(
+                        "ไม่พบ Username นี้ กรุณาสมัครสมาชิกก่อน",
+                        "error"
+                    );
+                    return;
+                }
+
+                const passwordHash = await hashPassword(
+                    password,
+                    user.salt
+                );
+
+                if (passwordHash !== user.passwordHash) {
+                    showMessage(
+                        "Password ไม่ถูกต้อง กรุณาลองใหม่",
+                        "error"
+                    );
+                    return;
+                }
+
+                document.getElementById("loginForm").hidden = true;
+                document.getElementById("registerForm").hidden = true;
+
+                document.getElementById("memberPanel").hidden = false;
+
+                document.getElementById(
+                    "memberName"
+                ).textContent = user.fullname;
+
+                showMessage(
+                    "เข้าสู่ระบบเรียบร้อย",
+                    "success"
+                );
+
+                sessionStorage.setItem(
+                    "studentPortfolioLoggedIn",
+                    username
+                );
+
+            }
+        );
+
+        // ออกจากระบบ
+        function logout() {
+
+            sessionStorage.removeItem(
+                "studentPortfolioLoggedIn"
+            );
+
+            document.getElementById("loginForm").reset();
+            document.getElementById("registerForm").reset();
+
+            showAuthForm("login");
+
+            showMessage(
+                "ออกจากระบบเรียบร้อย",
+                "success"
+            );
+        }
+
+        // ยกเลิกการกรอกข้อมูล
+        document.getElementById("loginForm").addEventListener(
+            "reset",
+            function() {
+                showMessage("");
+            }
+        );
+
+        document.getElementById("registerForm").addEventListener(
+            "reset",
+            function() {
+                showMessage("");
+            }
+        );
+
+    </script>
+
+</body>
+</html>
